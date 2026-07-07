@@ -28,7 +28,7 @@ def register_hotel_detail_tool(mcp: FastMCP) -> None:
         localeParam: Annotated[
             LocaleParam,
             Field(
-                description="Country and currency object. Fields: countryCode (string, ISO 3166-1 alpha-2, default CN); currency (string, ISO 4217, default CNY)."
+                description="Country and currency object. Fields: countryCode (string, ISO 3166-1 alpha-2, default CN); currency (string, ISO 4217, default USD)."
             ),
         ] = None,
     ) -> dict:

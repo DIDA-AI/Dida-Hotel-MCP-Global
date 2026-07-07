@@ -233,7 +233,7 @@ The server provides 3 tools:
 **`localeParam` fields:**
 
 - `countryCode` (string, optional, default: `CN`): ISO 3166-1 alpha-2 country code.
-- `currency` (string, optional, default: `CNY`): Currency code.
+- `currency` (string, optional, default: `USD`): Currency code.
 
 #### Output
 
