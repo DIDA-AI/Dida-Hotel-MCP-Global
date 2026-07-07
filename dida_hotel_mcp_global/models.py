@@ -48,7 +48,7 @@ class OccupancyParam(BaseModel):
 
 
 class LocaleParam(BaseModel):
-    countryCode: str = Field(default="CN", description="ISO 3166-1 alpha-2 country code (uppercase). Defaults to CN.")
+    countryCode: str = Field(default="US", description="ISO 3166-1 alpha-2 country code (uppercase). Defaults to US.")
     currency: str = Field(default="USD", description="ISO 4217 currency code (uppercase). Defaults to USD.")
 
 
