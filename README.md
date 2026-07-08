@@ -117,26 +117,260 @@ Add the local server URL under Cursor's MCP Settings page:
 
 The server registers 3 core tools to handle the complete search-to-book lifecycle:
 
-### 1. `searchHotels`
+### 1) searchHotels
 Find hotels by location, date, price, star rating, and tags.
-* **Arguments**:
+
+* **Input Parameters**:
   - `originQuery` (string, **required**): User's raw text request (e.g., "Find boutique hotels in Tokyo under $200").
   - `place` (string, **required**): Specific destination, attraction, or airport name.
-  - `placeType` (string, **required**): Location type (`city`, `airport`, `point_of_interest`, `hotel`, etc.).
-  - `checkInParam` (object, optional): `checkInDate` (YYYY-MM-DD), `stayNights`, and `adultCount`.
-  - `filterOptions` (object, optional): `starRatings` (array of numbers), `distanceInMeter` (radius limit from POI).
-  - `hotelTags` (object, optional): `requiredTags`, `preferredBrands`, `maxPricePerNight`.
+  - `placeType` (string, **required**): Location type (`city`, `airport`, `point_of_interest`, `hotel`, etc.). Supported values: `city`, `airport`, `point_of_interest`, `train_station`, `subway_station`, `hotel`, `district/county`, `detailed address`.
+  - `countryCode` (string, optional): ISO 3166-1 alpha-2 country code, e.g. `CN`, `US`.
+  - `size` (number, optional, default: `5`): Number of hotels to return, max `20`.
+  - `checkInParam` (object, optional): Check-in related parameters.
+  - `filterOptions` (object, optional): Filter parameters.
+  - `hotelTags` (object, optional): Tag / brand / budget filters.
 
-### 2. `getHotelDetail`
+<details>
+<summary><b>🔎 View Detailed Input Parameters (checkInParam, filterOptions, hotelTags)</b></summary>
+
+**`checkInParam` fields:**
+- `adultCount` (number, optional, default: `2`): Adults per room.
+- `checkInDate` (string, optional, format: `YYYY-MM-DD`): Check-in date. If omitted, in the past, or malformed, defaults to tomorrow.
+- `stayNights` (number, optional, default: `1`): Number of nights (max 28).
+
+**`filterOptions` fields:**
+- `distanceInMeter` (number, optional): Straight-line distance from POI in meters. Defaults to `2000` when a POI is used.
+- `starRatings` (number[], optional): Star rating range, defaults to `[0.0, 5.0]`, step `0.5`.
+
+**`hotelTags` fields:**
+- `requiredTags` (string[], optional): Required tags (hard constraint).
+- `preferredBrands` (string[], optional): Preferred brands.
+- `maxPricePerNight` (number, optional): Max budget per night (CNY).
+
+</details>
+
+<details>
+<summary><b>📄 View Response JSON Schema Example</b></summary>
+
+```json
+{
+  "message": "Hotel search succeeded",
+  "hotelInformationList": [
+    {
+      "hotelId": 43615,
+      "bookingUrl": "https://rollinggo.cn/pages/hotel/detail/index?...",
+      "name": "Sunworld Dynasty Hotel Beijing",
+      "brand": null,
+      "address": "50 Wangfujing Street",
+      "destinationId": "6140156",
+      "latitude": 39.917748,
+      "longitude": 116.412249,
+      "distanceInMeters": 205,
+      "starRating": 5.0,
+      "price": {
+        "message": "Price found, lowest: 626.0, currency: CNY",
+        "hasPrice": true,
+        "currency": "CNY",
+        "lowestPrice": 626.0
+      },
+      "areaCode": "CN",
+      "description": "...",
+      "imageUrl": "https://image-cdn.RollingGo.com/...",
+      "hotelAmenities": ["24h Front Desk", "WiFi"],
+      "score": 1.0,
+      "tags": ["Near Shopping Mall", "Free WiFi"]
+    }
+  ]
+}
+```
+
+> **Note:** `price` is an object, not a number. Fields may be missing or `null` depending on city/supply source.
+
+</details>
+
+---
+
+### 2) getHotelDetail
 Fetch real-time room types, dynamic pricing, inventory, and cancellation policies for a selected hotel.
-* **Arguments**:
-  - `hotelId` (number) or `name` (string) — to identify the hotel.
-  - `dateParam` (object, optional): `checkInDate` and `checkOutDate`.
-  - `occupancyParam` (object, optional): `roomCount`, `adultCount`, `childCount`.
-  - `localeParam` (object, optional): `currency` (e.g., `USD`, `EUR`) and `countryCode`.
 
-### 3. `getHotelSearchTags`
-Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym", "Kid-Friendly") to refine search filtering.
+* **Input Parameters**:
+  - `hotelId` (number, optional): Hotel ID. Mutually exclusive with `name`; if both are provided, `hotelId` takes priority.
+  - `name` (string, optional): Hotel name (fuzzy match).
+  - `dateParam` (object, optional): Check-in / check-out date parameters.
+  - `occupancyParam` (object, optional): Guest count and room count parameters.
+  - `localeParam` (object, optional): Country and currency parameters.
+
+<details>
+<summary><b>🔎 View Detailed Input Parameters (dateParam, occupancyParam, localeParam)</b></summary>
+
+**`dateParam` fields:**
+- `checkInDate` (string, optional, format: `YYYY-MM-DD`): Check-in date. Defaults to tomorrow if empty, malformed, or in the past.
+- `checkOutDate` (string, optional, format: `YYYY-MM-DD`): Check-out date. Defaults to `checkInDate + 1` day if empty, malformed, or not after check-in.
+
+**`occupancyParam` fields:**
+- `adultCount` (number, optional, default: `2`): Adults per room.
+- `childCount` (number, optional, default: `0`): Children per room.
+- `childAgeDetails` (number[], optional): Child ages, e.g. `[3, 5]`.
+- `roomCount` (number, optional, default: `1`): Number of rooms.
+
+**`localeParam` fields:**
+- `countryCode` (string, optional, default: `US`): ISO 3166-1 alpha-2 country code.
+- `currency` (string, optional, default: `USD`): Currency code.
+
+</details>
+
+<details>
+<summary><b>📄 View Response JSON Schema Example</b></summary>
+
+```json
+{
+  "success": true,
+  "errorMessage": null,
+  "hotelId": 43615,
+  "bookingUrl": "https://rollinggo.cn/pages/hotel/detail/index?...",
+  "name": "Sunworld Dynasty Hotel Beijing",
+  "checkIn": "2026-03-05",
+  "checkOut": "2026-03-06",
+  "roomRatePlans": [
+    {
+      "roomTypeId": 4984714,
+      "roomName": "Superior Room",
+      "roomNameCn": "高级客房",
+      "ratePlanId": "7012072001634754626",
+      "ratePlanName": "Superior Room King Bed, 1 King Bed",
+      "bedType": 73,
+      "bedTypeDescription": "Unknown",
+      "currency": "CNY",
+      "totalPrice": 0,
+      "totalSalesRate": null,
+      "inventoryCount": null,
+      "isOnRequest": null,
+      "recommendIndex": null,
+      "cancellationPolicies": [
+        {
+          "fromDate": "2026-03-02T10:00:00+08:00",
+          "toDate": null,
+          "amount": 634,
+          "percent": null,
+          "type": null,
+          "description": null
+        }
+      ],
+      "includedFees": null,
+      "excludedFees": null,
+      "metadata": null
+    }
+  ]
+}
+```
+
+> **Note:** On failure, the response may contain an error message (e.g. "Failed to fetch pricing, please retry later") or structured error fields. The `roomRatePlans` array can be long — consider paginating or limiting display on the client side.
+
+</details>
+
+---
+
+### 3) getHotelSearchTags
+Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym", "Kid-Friendly") to refine search filtering. Suitable for local caching and client-side intent mapping.
+
+<details>
+<summary><b>📄 View Response JSON Schema Example</b></summary>
+
+```json
+{
+  "tags": [
+    {
+      "name": "Free WiFi",
+      "category": "Core Amenities",
+      "description": "Provides free WiFi"
+    }
+  ],
+  "usageGuide": {
+    "tagUsage": "Place tag names into hotelTags.preferredTags (preference), requiredTags (hard requirement), or excludedTags (exclusion)",
+    "exampleRequest": "{...}"
+  }
+}
+```
+
+**Common tag categories:**
+- Brand & Ratings
+- Specialty Highlights
+- Core Amenities
+- Family & Kids
+- Service Details
+- Service & Dining
+- Transportation & Payment
+- Views & Room Types
+- Hotel Type
+- Pricing
+
+</details>
+
+---
+
+## 📚 Usage Examples
+
+<details>
+<summary><b>Example 1: City Search</b></summary>
+
+```json
+{
+  "originQuery": "Find 4-star+ hotels in Beijing for 2 nights",
+  "place": "Beijing",
+  "placeType": "city",
+  "checkInParam": {
+    "checkInDate": "2026-03-01",
+    "stayNights": 2
+  },
+  "filterOptions": {
+    "starRatings": [4.0, 5.0]
+  },
+  "size": 5
+}
+```
+
+</details>
+
+<details>
+<summary><b>Example 2: With Tags and Budget Constraints</b></summary>
+
+```json
+{
+  "originQuery": "Find quality hotels in Beijing with free WiFi, budget under 1000 per night",
+  "place": "Beijing",
+  "placeType": "city",
+  "hotelTags": {
+    "requiredTags": ["Free WiFi"],
+    "maxPricePerNight": 1000
+  },
+  "size": 5
+}
+```
+
+</details>
+
+<details>
+<summary><b>Example 3: Query Hotel Room Types and Pricing</b></summary>
+
+```json
+{
+  "hotelId": 43615,
+  "dateParam": {
+    "checkInDate": "2026-03-05",
+    "checkOutDate": "2026-03-06"
+  },
+  "occupancyParam": {
+    "adultCount": 2,
+    "roomCount": 1
+  },
+  "localeParam": {
+    "currency": "CNY",
+    "countryCode": "CN"
+  }
+}
+```
+
+</details>
 
 ---
 
@@ -144,6 +378,11 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
 * The local server forwards requests to the secure DIDA global API.
 * Always supply your API Key in the headers. Keys must start with `mcp_`.
 * **Required header**: `Authorization: Bearer mcp_your_key_here`
+
+---
+
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
