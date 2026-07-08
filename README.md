@@ -391,7 +391,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * 🐛 **Issues**: Submit issues or feature requests on [GitHub Issues](https://github.com/DIDA-AI/dida_hotel_mcp_global/issues).
 * 💬 **Discord Community**: Scan the QR code below to join our Discord server. Connect with other developers, discuss integrations, and get real-time support from the DIDA team.
 
-![Discord Support](discord-qr.png)
+<img src="discord-qr.png" width="200" alt="Discord Support" />
 
 ---
 **Made with ❤️ by the DIDA Team**
