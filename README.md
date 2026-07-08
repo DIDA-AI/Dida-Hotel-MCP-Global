@@ -7,7 +7,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Smithery Badge](https://smithery.ai/badge/@dida-ai/dida-hotel-mcp-global)](https://smithery.ai/server/@dida-ai/dida-hotel-mcp-global)
 
-DIDA Hotel MCP Server Global is designed specifically for **global users and overseas travel scenarios**.
+DIDA Hotel MCP Server Global is designed specifically for **global users and international travel scenarios**.
 
 > 💡 **For Chinese users** or workflows primarily targeting the mainland China market and local payment systems, please refer to the localized version:
 > 👉 [**Dida-hotel-MCP-CN**](https://github.com/DIDA-AI/Dida-hotel-MCP-CN)
@@ -391,7 +391,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * 🐛 **Issues**: Submit issues or feature requests on [GitHub Issues](https://github.com/DIDA-AI/dida_hotel_mcp_global/issues).
 * 👥 **WeChat Community**: Scan the QR code below for instant technical assistance (primarily Chinese-speaking developers).
 
-![Support WeChat](support-wehcat%20group.png)
+![Support WeChat](support-wechat-group.png)
 
 ---
 **Made with ❤️ by the DIDA Team**
