@@ -389,9 +389,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 💬 Support
 * 📧 **Email**: [york.lu@dida.com](mailto:york.lu@dida.com)
 * 🐛 **Issues**: Submit issues or feature requests on [GitHub Issues](https://github.com/DIDA-AI/dida_hotel_mcp_global/issues).
-* 👥 **WeChat Community**: Scan the QR code below for instant technical assistance (primarily Chinese-speaking developers).
+* 💬 **Discord Community**: Scan the QR code below to join our Discord server. Connect with other developers, discuss integrations, and get real-time support from the DIDA team.
 
-![Support WeChat](support-wechat-group.png)
+![Discord Support](discord-qr.png)
 
 ---
 **Made with ❤️ by the DIDA Team**
