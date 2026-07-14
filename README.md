@@ -14,7 +14,7 @@ DIDA Hotel MCP Server Global is designed specifically for **global users and int
 
 An official Model Context Protocol (MCP) server that empowers AI Agents to search, compare, and book **over 2 Million hotels globally**. Powered by DIDA (Asia's #1 and world's #3 B2B travel platform), this server bridges the gap between AI travel recommendations and real-world bookings.
 
-🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Troubleshooting Guide | Q&A ](#-troubleshooting-guide-|-Q&A)
+🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Q&A ](#-Q&A)
 
 ---
 
@@ -485,7 +485,7 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
 
 </details>
 
-## 💬 Troubleshooting Guide | Q&A 
+## 💬 Q&A 
 🔍[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
 <details>
 <summary><b>Q&A</b></summary>
