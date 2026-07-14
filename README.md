@@ -486,7 +486,7 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
 </details>
 
 ## 💬 Troubleshooting Guide | Q&A 
-🔍 [Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
+🔍[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
 <details>
 <summary><b>Q&A</b></summary>
 
@@ -528,8 +528,8 @@ Search results show reference prices; real-time prices may vary. Currently, only
 <img src="discord-qr.png" width="300" alt="Discord Support" />
 
 ---
-
-## 🔣 If you want Local Deployment
+# Appendix
+## 🔣 If you want local deployment
 #### Method A: Run via `uv` (Recommended - Zero Config Setup)
 If you have [uv](https://github.com/astral-sh/uv) installed, run the server instantly:
 ```bash
