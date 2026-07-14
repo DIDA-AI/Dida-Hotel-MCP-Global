@@ -485,10 +485,10 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
 
 </details>
 
-## 💬 Q&A 
+## 💬 Q&A | Troubleshooting Guide
 <details>
-<summary><b>Q&A | [Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)</b></summary>
-
+<summary><b>Q&A</b></summary>
+[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
 **Q1: The client doesn't show the Tool after configuration**
 1. Check if the JSON configuration format is correct
 2. Confirm that `url` and `type` are correct
@@ -518,7 +518,7 @@ Search results show reference prices; real-time prices may vary. Currently, only
 **Q6: How do I get an API Key?**
 Visit [https://travelportal-partner-center.dida.com/register?lang=en](https://travelportal-partner-center.dida.com/register?lang=en) to submit your application. Approval is automatic within 1–3 minutes, and usage is completely free with no limits.
 </details>
-[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
+
 
 ## 💬 Support
 * 📧 **Email**: [york.lu@dida.com](mailto:york.lu@dida.com)
