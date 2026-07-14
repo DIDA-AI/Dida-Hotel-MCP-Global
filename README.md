@@ -485,7 +485,8 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
 
 </details>
 
-## 💬 Q&A | Troubleshooting Guide
+## 💬 Troubleshooting Guide | Q&A 
+[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
 <details>
 <summary><b>Q&A</b></summary>
 
@@ -516,13 +517,13 @@ Common when calling directly with cURL. Check that the Accept header is included
 Search results show reference prices; real-time prices may vary. Currently, only queries are supported — online booking is not yet available.
 
 </details>
-[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
+
 
 ## 💬 Support
 * 📧 **Email**: [york.lu@dida.com](mailto:york.lu@dida.com)
 * 🐛 **Issues**: Submit issues or feature requests on [GitHub Issues](https://github.com/DIDA-AI/dida_hotel_mcp_global/issues).
 * 💬 **Discord Community**: Join our [Discord Server](https://discord.gg/DvKcz7YnH) or scan the QR code below to connect with other developers, discuss integrations, and get real-time support from the DIDA team.
-[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
+
 
 <img src="discord-qr.png" width="300" alt="Discord Support" />
 
