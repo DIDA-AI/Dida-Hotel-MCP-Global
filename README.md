@@ -25,15 +25,13 @@ Traditional AI agents can only recommend hotels based on static training dataset
 
 ✅ **Live Rates & Bookable Inventory** — Zero-latency price verification with real-time availability; every result is instantly bookable.
 
-✅ **Battle-Tested Supply Chain** — The world's #3 travel B2B platform, 14 years in the making, fully API-native end to end.
+✅ **Supply Chain** — The world's #3 travel B2B platform, 14 years in the making, fully API-native end to end.
 
-✅ **Global Hotel Network** — 2,000,000+ properties across every major destination.
+✅ **Global Hotel Network** — 2,000,000+ properties across every major destination. 500+ suppliers covering every tier, from luxury chains to local boutiques.
 
 ✅ **Direct Hotel Contracts** — 110,000+ directly connected hotels with live price and inventory sync.
 
-✅ **Multi-Source Supply** — 500+ integrated suppliers covering every tier, from luxury chains to local boutiques.
-
-✅ **Price Edge at Source** — Sourced upstream of OTAs; sharp rates on international hotels and hot spots like Shanghai, Hong Kong, Japan & Korea.
+✅ **Price Edge at Source** — Sourced upstream of OTAs; sharp rates on hot spots.
 
 ✅ **Agent-Ready** — Works out of the box with 40+ leading AI coding agents: Cursor, Claude Code, Codex, Windsurf, Copilot, and more.
 
