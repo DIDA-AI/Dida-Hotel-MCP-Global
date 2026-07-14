@@ -485,6 +485,40 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
 
 </details>
 
+## 💬 Q&A 
+<details>
+<summary><b>Example 3: Query Hotel Room Types and Pricing</b></summary>
+
+**Q1: The client doesn't show the Tool after configuration**
+1. Check if the JSON configuration format is correct
+2. Confirm that `url` and `type` are correct
+3. Confirm that the API Key in the `Authorization` header is correct
+4. Restart the client (changes only take effect after restart)
+
+**Q2: Returns 401 Unauthorized**
+Invalid or incorrectly formatted API Key:
+1. The API Key should start with `mcp_`
+2. In `Authorization: Bearer YOUR_API_KEY`, there must be a space after Bearer
+3. Make sure there are no extra spaces or line breaks in the API Key
+
+**Q3: Returns 400 Bad Request**
+Common when calling directly with cURL. Check that the Accept header is included:
+```bash
+-H "Accept: application/json, text/event-stream"
+```
+
+**Q4: searchHotels returns empty results**
+1. Check if `place` and `placeType` match (e.g., "Shanghai Bund" should be paired with "Attraction")
+2. Relax filter criteria (remove star rating / tag restrictions)
+3. Confirm that `checkInDate` is not in the past
+
+**Q5: Prices don't match actual rates**
+Search results show reference prices; real-time prices may vary. Currently, only queries are supported — online booking is not yet available.
+
+**Q6: How do I get an API Key?**
+Visit [https://travelportal-partner-center.dida.com/register?lang=en](https://travelportal-partner-center.dida.com/register?lang=en) to submit your application. Approval is automatic within 1–3 minutes, and usage is completely free with no limits.
+</details>
+https://global.rollinggo.store/docs/mcp-docs/mcp-config
 ## 💬 Support
 * 📧 **Email**: [york.lu@dida.com](mailto:york.lu@dida.com)
 * 🐛 **Issues**: Submit issues or feature requests on [GitHub Issues](https://github.com/DIDA-AI/dida_hotel_mcp_global/issues).
