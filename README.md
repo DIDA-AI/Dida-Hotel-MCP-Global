@@ -486,7 +486,7 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
 </details>
 
 ## 💬 Troubleshooting Guide | Q&A 
-[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
+🔍 [Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
 <details>
 <summary><b>Q&A</b></summary>
 
