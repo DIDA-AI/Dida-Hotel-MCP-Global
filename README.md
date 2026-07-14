@@ -18,7 +18,7 @@ An official Model Context Protocol (MCP) server that empowers AI Agents to searc
 
 ---
 
-## 🌟 Why DIDA Hotel MCP Server Global?
+## 🌟 Why DIDA Hotel MCP?
 
 Traditional AI agents can only recommend hotels based on static training datasets. The **DIDA Hotel MCP Server Global** equips your LLM agent with direct, real-time transactional capabilities:
 
@@ -44,77 +44,189 @@ Integrate global hotel search and booking into your AI assistant in under **5 mi
 ### Step 1: Get Your Developer API Key
 
 1. Go to the [DIDA Partner Center](https://global.rollinggo.store/apply) and sign up for a free key.
-2. Fill in your basic information. Approval is automated and takes 1–3 minutes. You will receive an email containing:
-   - Your `mcp_` prefixed API Key.
-   - Credentials for your B2B Partner Center dashboard (to monitor orders, configure markup, and track earnings).
+2. You will receive an email containing: Credentials for your B2B Partner Center dashboard (to monitor orders, configure markup, and track earnings).
 
 ---
 
-### Step 2: Running the Server
+## Step 2: Connect to Your Agent
 
-Choose one of the methods below to run the server.
+> Recommended clients: Claude CLI, Codex, and Cursor. Other MCP-compatible clients (such as Kiro, Doubao, etc.) can be configured similarly.
 
-#### Method A: Run via `uv` (Recommended - Zero Config Setup)
-If you have [uv](https://github.com/astral-sh/uv) installed, run the server instantly:
-```bash
-uv run --with-requirements requirements.txt server.py
-```
+### Claude CLI
 
-#### Method B: Standard Python Setup
-```bash
-# Clone the repository
-git clone https://github.com/DIDA-AI/dida_hotel_mcp_global.git
-cd dida_hotel_mcp_global
-
-# Setup virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies and run
-pip install -r requirements.txt
-python server.py
-```
-The local server will run on `http://localhost:8000/mcp`, automatically forwarding requests to the secure DIDA global API nodes.
-
----
-
-## ⚙️ MCP Client Configuration
-
-### 1. Claude Desktop (Stdio / Local Subprocess)
-Best for local desktop workflows. Add this to your Claude Desktop configuration file (typically `~/Library/Application Support/Claude/claude_desktop_config.json`):
+Create `.mcp.json` in your project root:
 
 ```json
 {
   "mcpServers": {
-    "dida-hotel-mcp": {
-      "command": "python",
-      "args": ["/absolute/path/to/dida_hotel_mcp_global/server.py"],
-      "env": {
+    "Dida-Hotel": {
+      "url": "https://mcp.rollinggo.cn/mcp",
+      "type": "http",
+      "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
       }
     }
   }
 }
 ```
-*(Make sure to replace `/absolute/path/to/...` and `YOUR_API_KEY` with your actual local path and key).*
 
-### 2. Cursor / Windsurf (SSE / HTTP Transport)
-Add the local server URL under Cursor's MCP Settings page:
-* **Name**: Dida-Hotel-MCP
-* **Type**: `SSE`
-* **URL**: `http://localhost:8000/mcp`
-* **Headers (JSON)**:
-  ```json
-  {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Accept-Language": "en_US"
+Or add directly via the command line:
+
+```bash
+claude mcp add \
+  --transport http \
+  --header "Authorization: Bearer YOUR_API_KEY" \
+  Dida-Hotel \
+  https://mcp.rollinggo.cn/mcp
+```
+
+### Codex
+
+Config file location: `.codex/config.json` in the project root, or globally at `~/.codex/config.json`
+
+```json
+{
+  "mcpServers": {
+    "Dida-Hotel": {
+      "url": "https://mcp.rollinggo.cn/mcp",
+      "type": "streamable-http",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
   }
-  ```
+}
+```
+
+### Cursor
+
+Config file location: `.cursor/mcp.json` in the project root, or globally at `~/.cursor/mcp.json`
+
+```json
+{
+  "mcpServers": {
+    "Dida-Hotel": {
+      "url": "https://mcp.rollinggo.cn/mcp",
+      "type": "streamable-http",
+      "headers": {
+        "Authorization": "Bearer YOUR_API_KEY"
+      }
+    }
+  }
+}
+```
+
+> Replace `YOUR_API_KEY` with your actual API Key.
+
+### Test Directly with cURL
+
+> **Note**: cURL must include `-H "Accept: application/json, text/event-stream"`, otherwise the server will return a 400 error.
+
+```bash
+curl -X POST https://mcp.rollinggo.cn/mcp \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json, text/event-stream" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "tools/call",
+    "params": {
+      "name": "searchHotels",
+      "arguments": {
+        "originQuery": "Shanghai Bund five-star hotel",
+        "place": "Shanghai Bund",
+        "placeType": "Attraction",
+        "checkInParam": {
+          "checkInDate": "2026-06-01",
+          "stayNights": 2
+        },
+        "filterOptions": {
+          "starRatings": [5.0]
+        },
+        "size": 3
+      }
+    },
+    "id": 1
+  }'
+```
 
 ---
 
-## 🔧 Available Tools
+## Step 3: Your First MCP Call
 
+Once configured, simply tell your AI assistant:
+
+> "Find me a five-star hotel near the Shanghai Bund for a stay starting the day after tomorrow."
+
+The AI will automatically call the `searchHotels` Tool and return a list of hotels.
+
+### Hotel Search Example
+
+```json
+{
+  "jsonrpc": "2.0",
+  "method": "tools/call",
+  "params": {
+    "name": "searchHotels",
+    "arguments": {
+      "originQuery": "Shanghai Bund five-star hotel",
+      "place": "Shanghai Bund",
+      "placeType": "Attraction",
+      "checkInParam": {
+        "checkInDate": "2026-06-01",
+        "stayNights": 2
+      },
+      "filterOptions": {
+        "starRatings": [5.0]
+      },
+      "size": 3
+    }
+  },
+  "id": 1
+}
+```
+
+---
+
+## Step 4: View Results and Sample Data
+
+### Hotel Search Results (Real Data)
+
+> Searching for "Shanghai Bund five-star hotel", 2 nights, returns:
+
+| Hotel | Stars | Lowest Price/Night | Distance to Bund |
+|-------|-------|--------------------|------------------|
+| Fairmont Peace Hotel Shanghai | ⭐⭐⭐⭐⭐ | $648 | 124m |
+| The Peninsula Shanghai | ⭐⭐⭐⭐⭐ | $940 | 252m |
+
+### Expected Response JSON Example
+
+```json
+{
+  "message": "Hotel search successful",
+  "hotelInformationList": [
+    {
+      "hotelId": 29529,
+      "bookingUrl": "https://rollinggo.cn/pages/hotel/detail/index?...",
+      "name": "Fairmont Peace Hotel on the Bund",
+      "address": "No. 20 Nanjing East Road",
+      "starRating": 5.0,
+      "price": {
+        "message": "Price query successful. Lowest price: 648, Currency: USD",
+        "hasPrice": true,
+        "currency": "USD",
+        "lowestPrice": 648.0
+      },
+      "hotelAmenities": ["Bar", "Gym", "Pool", "SPA", "Parking", "WIFI"],
+      "tags": ["SPA Service", "Resort Hotel", "Sports-Friendly Hotel"]
+    }
+  ]
+}
+
+```
+
+## 🔧 Available Tools
+[Official Docs | Dida MCP Tools](https://global.rollinggo.store/docs/mcp-docs/mcp-tool-reference)
 The server registers 3 core tools to handle the complete search-to-book lifecycle:
 
 ### 1) searchHotels
@@ -369,6 +481,33 @@ Retrieve metadata containing all filterable tag names (e.g., "Free WiFi", "Gym",
   }
 }
 ```
+
+## 🔣 If you want Local Deployment
+#### Method A: Run via `uv` (Recommended - Zero Config Setup)
+If you have [uv](https://github.com/astral-sh/uv) installed, run the server instantly:
+```bash
+uv run --with-requirements requirements.txt server.py
+```
+
+#### Method B: Standard Python Setup
+```bash
+# Clone the repository
+git clone https://github.com/DIDA-AI/dida_hotel_mcp_global.git
+cd dida_hotel_mcp_global
+
+# Setup virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies and run
+pip install -r requirements.txt
+python server.py
+```
+The local server will run on `http://localhost:8000/mcp`, automatically forwarding requests to the secure DIDA global API nodes.
+
+---
+
+---
 
 </details>
 
