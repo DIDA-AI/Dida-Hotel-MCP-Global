@@ -522,6 +522,7 @@ Search results show reference prices; real-time prices may vary. Currently, only
 * 📧 **Email**: [york.lu@dida.com](mailto:york.lu@dida.com)
 * 🐛 **Issues**: Submit issues or feature requests on [GitHub Issues](https://github.com/DIDA-AI/dida_hotel_mcp_global/issues).
 * 💬 **Discord Community**: Join our [Discord Server](https://discord.gg/DvKcz7YnH) or scan the QR code below to connect with other developers, discuss integrations, and get real-time support from the DIDA team.
+[Troubleshooting Guide](https://global.rollinggo.store/docs/mcp-docs/mcp-config)
 
 <img src="discord-qr.png" width="300" alt="Discord Support" />
 
