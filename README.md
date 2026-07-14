@@ -227,6 +227,7 @@ The AI will automatically call the `searchHotels` Tool and return a list of hote
 
 ## 🔧 Available Tools
 [Official Docs | Dida MCP Tools](https://global.rollinggo.store/docs/mcp-docs/mcp-tool-reference)
+
 The server registers 3 core tools to handle the complete search-to-book lifecycle:
 
 ### 1) searchHotels
