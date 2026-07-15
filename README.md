@@ -81,7 +81,7 @@ Create `.mcp.json` in your project root:
 {
   "mcpServers": {
     "Dida-Hotel": {
-      "url": "https://mcp.rollinggo.cn/mcp",
+      "url": "https://mcp.rollinggo.ai/mcp",
       "type": "http",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
@@ -98,7 +98,7 @@ claude mcp add \
   --transport http \
   --header "Authorization: Bearer YOUR_API_KEY" \
   Dida-Hotel \
-  https://mcp.rollinggo.cn/mcp
+  https://mcp.rollinggo.ai/mcp
 ```
 
 ### Codex
@@ -109,7 +109,7 @@ Config file location: `.codex/config.json` in the project root, or globally at `
 {
   "mcpServers": {
     "Dida-Hotel": {
-      "url": "https://mcp.rollinggo.cn/mcp",
+      "url": "https://mcp.rollinggo.ai/mcp",
       "type": "streamable-http",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
@@ -127,7 +127,7 @@ Config file location: `.cursor/mcp.json` in the project root, or globally at `~/
 {
   "mcpServers": {
     "Dida-Hotel": {
-      "url": "https://mcp.rollinggo.cn/mcp",
+      "url": "https://mcp.rollinggo.ai/mcp",
       "type": "streamable-http",
       "headers": {
         "Authorization": "Bearer YOUR_API_KEY"
@@ -144,7 +144,7 @@ Config file location: `.cursor/mcp.json` in the project root, or globally at `~/
 > **Note**: cURL must include `-H "Accept: application/json, text/event-stream"`, otherwise the server will return a 400 error.
 
 ```bash
-curl -X POST https://mcp.rollinggo.cn/mcp \
+curl -X POST https://mcp.rollinggo.ai/mcp \
   -H "Content-Type: application/json" \
   -H "Accept: application/json, text/event-stream" \
   -H "Authorization: Bearer YOUR_API_KEY" \
@@ -228,7 +228,7 @@ The AI will automatically call the `searchHotels` Tool and return a list of hote
   "hotelInformationList": [
     {
       "hotelId": 29529,
-      "bookingUrl": "https://rollinggo.cn/pages/hotel/detail/index?...",
+      "bookingUrl": "https://rollinggo.ai/pages/hotel/detail/index?...",
       "name": "Fairmont Peace Hotel on the Bund",
       "address": "No. 20 Nanjing East Road",
       "starRating": 5.0,
@@ -292,7 +292,7 @@ Find hotels by location, date, price, star rating, and tags.
   "hotelInformationList": [
     {
       "hotelId": 43615,
-      "bookingUrl": "https://rollinggo.cn/pages/hotel/detail/index?...",
+      "bookingUrl": "https://rollinggo.ai/pages/hotel/detail/index?...",
       "name": "Sunworld Dynasty Hotel Beijing",
       "brand": null,
       "address": "50 Wangfujing Street",
@@ -361,7 +361,7 @@ Fetch real-time room types, dynamic pricing, inventory, and cancellation policie
   "success": true,
   "errorMessage": null,
   "hotelId": 43615,
-  "bookingUrl": "https://rollinggo.cn/pages/hotel/detail/index?...",
+  "bookingUrl": "https://rollinggo.ai/pages/hotel/detail/index?...",
   "name": "Sunworld Dynasty Hotel Beijing",
   "checkIn": "2026-03-05",
   "checkOut": "2026-03-06",
