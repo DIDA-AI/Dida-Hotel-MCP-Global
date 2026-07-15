@@ -33,7 +33,7 @@ Traditional AI agents can only recommend hotels based on static training dataset
 
 ✅ **Global Hotel Network** — **2,000,000**+ properties across every major destination. **500**+ suppliers covering every tier, from luxury chains to local boutiques.
 
-✅ **Direct Hotel Contracts** — **110,000**+ directly connected hotels with live price and inventory sync.
+✅ **Direct Contracts** — **110,000**+ directly connected hotels with live price and inventory sync.
 
 ✅ **Price Edge at Source** — Priced upstream of OTAs; sharp rates on hot spots.
 
@@ -52,7 +52,7 @@ Traditional AI agents can only recommend hotels based on static training dataset
 
 • Product teams seeking to validate AI Agent commercial transaction loops
 
-• Individual developers with needs for hotel search, price comparison, and price drop alerts
+• Individuals with needs for hotel search, price comparison, and price drop alerts******
 
 ## 🎯 Use Cases
 * **General-Purpose Agents**: Equip any AI agent with native hotel booking. Users can compare, filter, and book—all within a single natural-language conversation.
