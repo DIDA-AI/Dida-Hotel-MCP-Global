@@ -20,7 +20,7 @@ This is an official MCP server empowers AI Agents to search, compare, and book *
 
 - **Transport Protocol**: `streamable-http`
 - **Pricing**: Completely free, no usage limits
--
+
   🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Q&A](#-qa) · 💰[MCP Monetization](https://global.rollinggo.store/docs/partnerdoc/partner1) 
 
 
