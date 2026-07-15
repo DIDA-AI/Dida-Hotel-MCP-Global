@@ -16,11 +16,6 @@ An official Model Context Protocol (MCP) server that empowers AI Agents to searc
 
 🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Q&A](#-qa) · 💰[MCP Monetization](https://global.rollinggo.store/docs/partnerdoc/partner1) 
 
----
-## 30-Second Overview
-
-Dida provides an MCP service for hotel search and booking:
-
 | Service | Endpoint | Available Tools | Authentication |
 |---------|----------|-----------------|----------------|
 | Hotel MCP | `https://mcp.rollinggo.ai/mcp` | searchHotels, getHotelDetail, getHotelSearchTags | `Authorization: Bearer <YOUR_API_KEY>` |
