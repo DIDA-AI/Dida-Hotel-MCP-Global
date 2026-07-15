@@ -5,7 +5,7 @@
 [![MCP Version](https://img.shields.io/badge/MCP-1.0.0-blue.svg)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Smithery Badge](https://smithery.ai/badge/@dida-ai/dida-hotel-mcp-global)](https://smithery.ai/server/@dida-ai/dida-hotel-mcp-global)
+
 
 This is an official MCP server empowers AI Agents to search, compare, and book **over 2 Million hotels globally**. Powered by DIDA (Asia's #1 and world's #3 B2B travel platform), this server bridges the gap between AI travel recommendations and real-world bookings.
 
@@ -27,7 +27,7 @@ This is an official MCP server empowers AI Agents to search, compare, and book *
 Traditional AI agents can only recommend hotels based on static training datasets. The **DIDA Hotel MCP** equips your LLM agent with direct, real-time transactional capabilities:
 
 
-✅ **Live Rates & Bookable Inventory** — Zero-latency price verification with real-time availability; every result is instantly bookable.
+✅ **Live Rates & Bookable Inventory** — Zero-latency price verification; every result is instantly bookable.
 
 ✅ **Supply Chain** — The world's Top **3** travel B2B platform, **14** years in the making, fully API-native end-to-end.
 
