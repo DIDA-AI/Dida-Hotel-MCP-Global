@@ -6,6 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
+🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Q&A](#-qa) · 💰[MCP Monetization](https://global.rollinggo.store/docs/partnerdoc/partner1) 
 
 This is an official MCP server empowers AI Agents to search, compare, and book **over 2 Million hotels globally**. Powered by DIDA (Asia's #1 and world's #3 B2B travel platform), this server bridges the gap between AI travel recommendations and real-world bookings.
 
@@ -18,7 +19,6 @@ This is an official MCP server empowers AI Agents to search, compare, and book *
 
 >  **For Chinese users** or workflows primarily targeting the mainland China market and Alipay payment systems, please refer to this version: [**Dida-hotel-MCP-CN**](https://github.com/DIDA-AI/Dida-hotel-MCP-CN)
 
-🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Q&A](#-qa) · 💰[MCP Monetization](https://global.rollinggo.store/docs/partnerdoc/partner1) 
 
 
 ---
