@@ -12,9 +12,7 @@ DIDA Hotel MCP Server Global is designed specifically for **global users and int
 > 💡 **For Chinese users** or workflows primarily targeting the mainland China market and local payment systems, please refer to the localized version:
 > 👉 [**Dida-hotel-MCP-CN**](https://github.com/DIDA-AI/Dida-hotel-MCP-CN)
 
-An official Model Context Protocol (MCP) server that empowers AI Agents to search, compare, and book **over 2 Million hotels globally**. Powered by DIDA (Asia's #1 and world's #3 B2B travel platform), this server bridges the gap between AI travel recommendations and real-world bookings.
-
-🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Q&A](#-qa) · 💰[MCP Monetization](https://global.rollinggo.store/docs/partnerdoc/partner1) 
+This is an official MCP server empowers AI Agents to search, compare, and book **over 2 Million hotels globally**. Powered by DIDA (Asia's #1 and world's #3 B2B travel platform), this server bridges the gap between AI travel recommendations and real-world bookings.
 
 | Service | Endpoint | Available Tools | Authentication |
 |---------|----------|-----------------|----------------|
@@ -23,6 +21,7 @@ An official Model Context Protocol (MCP) server that empowers AI Agents to searc
 - **Transport Protocol**: `streamable-http`
 - **Pricing**: Completely free, no usage limits
 
+🏠 [Apply Key](https://global.rollinggo.store/) · 🚀 [Quick Start](#-quick-start) · 🔧 [Tools](#-available-tools) · 📚 [Examples](#-usage-examples) · 💬 [Support](#-support) · 🔍 [Q&A](#-qa) · 💰[MCP Monetization](https://global.rollinggo.store/docs/partnerdoc/partner1) 
 ---
 ## 🌟 Why DIDA Hotel MCP?
 
