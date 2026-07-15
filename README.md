@@ -37,7 +37,7 @@ Traditional AI agents can only recommend hotels based on static training dataset
 
 ✅ **Price Edge at Source** — Priced upstream of OTAs; sharp rates on hot spots.
 
-✅ **Agent-Ready** — Works out of the box with **40+** leading AI coding agents: Cursor, Claude Code, Codex, Windsurf, Copilot, and more.
+✅ **Agent-Ready** — Works with **40+** leading AI coding agents: Cursor, Claude Code, Codex, Windsurf, Copilot, and more.
 
 ✅ **Monetize Every MCP Call** — Set country-specific markups, earn commission on every completed booking, and track orders, earnings, and payouts in real time. Flexible withdrawals for both businesses and individuals.
 
