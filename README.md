@@ -555,6 +555,40 @@ Search results show reference prices; real-time prices may vary. Currently, only
 
 <img src="discord-qr.png" width="300" alt="Discord Support" />
 
+## 🌟 Dida Hotel MCP (OAuth) v2.3 Major Update
+v2.3 optimizes the order query structure and adds multiple order detail fields to help Agents better handle check-in, payment, and cancellation scenarios. Note: This update applies to the OAuth integration version only, not the API Key version documented herein. The OAuth version requires business onboarding contact@rollinggo.ai.
+<details>
+<summary><b>What changed</b></summary>
+
+### Unchanged tools (4)
+
+- `getHotelSearchTags` — Get all enabled hotel filter tags
+- `searchHotels` — Search global hotel list by conditions
+- `getHotelDetail` — Get available room types and pricing for a hotel
+- `hotelPriceConfirm` — Lock real-time final retail price for selected room
+
+### Modified tools (2)
+
+- `createHotelBookingWithPaymentURL` — Removed `alipayUrlScene` parameter; unified `bookingResult.paymentUrl` to generic checkout
+- `searchHotelOrders` — Output simplified to 9 core fields (`orderNo`, `hotelName`, `roomName`, `orderStatus`, `totalPrice`, etc.) for list view; full detail moved to dedicated tool
+
+### New tools (1)
+
+- `getHotelOrderDetail` — Query full structured order details by `orderNo`, including `hotelConfirmationNo`, guest list, bed type, contact phones, coordinates, payment/cancellation deadlines, and policy flags
+
+### New fields
+
+- `hotelConfirmationNo` — Hotel-side real confirmation number for front-desk lookup
+- `stayInfo.bedTypeStr` — Human-readable bed type description (e.g., `"1 King Bed (1.8m)"`)
+- `stayInfo.guestNames` — Official pinyin/English guest name list for verification
+- `priceInfo.paymentDeadline` — Payment deadline timestamp (`YYYY-MM-DD HH:mm:ss`) for countdown alerts
+- `policyInfo.freeCancelDeadline` — Free cancellation deadline timestamp for refund window checks
+- `policyInfo.isCancelable` — Whether free cancellation is still available at the current moment
+
+---
+**Tool count:** 7 total (up from 6 in v2.2) — 1 new, 2 modified, 4 unchanged.
+</details>
+
 ---
 # Appendix
 ## 🔣 If you want local deployment
