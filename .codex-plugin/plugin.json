@@ -1,0 +1,9 @@
+{
+  "name": "dida-hotel-mcp-global",
+  "version": "1.0.0",
+  "description": "Dida Hotel MCP — Hotel Search & Booking. Empowers AI Agents to search, compare, and book over 2 Million hotels globally.",
+  "interface": {
+    "displayName": "Dida Hotel MCP Global",
+    "shortDescription": "Hotel Search & Booking MCP Server"
+  }
+}
