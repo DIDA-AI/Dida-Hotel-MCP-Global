@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/dida-ai-dida-rollinggo-hotel-mcp-global-badge.png)](https://mseep.ai/app/dida-ai-dida-rollinggo-hotel-mcp-global)
+
 # RollingGo Hotel MCP — Hotel Search & Booking
 
 [![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/DIDA-AI/dida_hotel_mcp_global/releases)
