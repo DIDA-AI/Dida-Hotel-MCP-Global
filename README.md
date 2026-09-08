@@ -1,4 +1,4 @@
-# RollingGo Hotel MCP — Hotel Search & Booking
+# Dida Hotel MCP — Hotel Search & Booking
 
 [![Version](https://img.shields.io/badge/Version-1.0.0-blue.svg)](https://github.com/DIDA-AI/dida_hotel_mcp_global/releases)
 [![ModelScope](https://img.shields.io/badge/ModelScope-Rank%237-brightgreen.svg)](https://modelscope.cn/)
